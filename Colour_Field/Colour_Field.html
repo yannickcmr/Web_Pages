@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Colour Field Generator</title>
+    <link rel="stylesheet" type= "text/css" href= "Colour_Field.css">
+    <script type="text/javascript" src="Colour_Field.js"></script>
+</head>
+<body>
+    <div class="main-container">
+        <h1>Colour Field Generator</h1>
+        <h4 id="describtion">Just select a format and hit enter to generate your unique painting!</h4>
+        <div class="painting-container">
+            <div id="frame-container" class="frame-container">
+                <div class="frame" id="frame"></div>
+                <div id="painting">painting</div>
+            </div>
+        </div>
+        <div class="option-container">
+            <select name="size" id="size-submit">
+                <option value="500x500">1:1</option>
+                <option value="500x230">16:9</option>
+                <option value="500x333">9:6</option>
+                <option value="500x375">4:3</option>
+            </select>
+            <button id="submit-button" onclick="Generate_Painting()">Generate Painting</button>
+        </div>
+    </div>
+</body>
