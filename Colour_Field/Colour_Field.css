@@ -1,0 +1,38 @@
+:root{
+    --font-family: Verdana, Geneva, Tahoma, sans-serif;
+    --font-size-big: 22px;
+    --font-size-small: 15px;
+    --major-colour: rgb(255, 255, 197);
+    --minor-colour: rgb(254, 254, 166);
+    --accent-colout: hsl(321,12,4);
+}
+body{
+    display: flex;
+    justify-content: center;
+}
+.main-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: center;
+    font-family: var(--font-family);
+    text-align: center;
+    background-color: var(--major-colour);
+    width: 90%;
+    height: 1000px;
+}
+
+h1{
+    font-size: var(--font-size-big);
+}
+
+h4{
+    font-size: var(--font-size-small);
+}
+
+.frame-container{
+    width: 600px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+}
