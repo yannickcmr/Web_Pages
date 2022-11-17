@@ -6,7 +6,7 @@
     --font-type: Verdana, Geneva, Tahoma, sans-serif;
     --font-size: 12px;
     --border-size: 5px;
-    --border-rad: 7px;
+    --border-rad: 8px;
     --x-grad: 10px;
     --y-grad: 0px;
 }
@@ -61,12 +61,16 @@ body {
     grid-area: "center";
 }
 
-#quote-button{
-    grid-area: "e";
+button{
     height: 25px;
-    width: 30%;
+    width: 20%;
     margin-bottom: 2%;
     background-color: var(--button-colour);
-    border-radius: var(--border-rad);
     border-color: var(--border-colour);
+} 
+#quote-button{
+    border-radius: 0 var(--border-rad) var(--border-rad) 0;
+}
+#copy-button{
+    border-radius: var(--border-rad) 0 0 var(--border-rad);
 }
