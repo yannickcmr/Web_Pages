@@ -13,3 +13,19 @@ function Randomize_Quote(){
         document.getElementById("author-area").innerText = "~ " + quote[1];
     })
 };
+
+function Copy_Quote () {
+    // get text and create temp.
+    var quote = document.getElementById("quote-area").innerText;
+    var author = document.getElementById("author-area").innerText;
+    var temp = document.createElement("textarea");
+    document.body.appendChild(temp);
+    // assign value to temp.
+    temp.value = `'${quote}' ${author}`;
+    temp.select();
+    // copy temp and remove it.
+    document.execCommand("copy");
+    document.body.removeChild(temp);
+
+    var copyButton = document.getElementById("copy-button");
+};
