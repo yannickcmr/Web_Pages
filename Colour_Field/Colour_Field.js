@@ -19,7 +19,7 @@ function Create_Canvas(format){
     let sizes = format.split("x");
     var canvas = document.createElement("div")
     canvas.id = "painting";
-    canvas.style.backgroundColor = "black"
+    canvas.style.backgroundColor = "rgb(20, 20, 20)"
     canvas.style.width = `${sizes[0]}px`;
     canvas.style.height = `${sizes[1]}px`;
     return canvas
@@ -31,30 +31,36 @@ function Calculate_Dimensions(canvas, rows, columns){
     return [Math.floor(y_dim/rows), Math.floor(x_dim/columns)]
 }
 
-function Create_Field(parent, field_dim, grid, prob){
+function Calculate_Scale(rows, columns){
+    if (rows > columns){
+        return `scale(0.96, 0.91)`
+    } else {
+        return `scale(0.91, 0.96)`
+    };
+}
+
+function Create_Field(parent, rows, columns, grid){
     let field = document.createElement("span");
     parent.appendChild(field);
 
-    field.style.width = `${field_dim[1] + 1}px`;
-    field.style.height = `${field_dim[0] + 1}px`;
+    field.style.width = `${100/columns}%`;
     field.style.display = "inline-block";
     field.style.backgroundColor = Random_Colour_hsl();
     if (grid){
         // change in relation to the format.
-        field.style.transform = "scale(0.9)";
+        field.style.transform = Calculate_Scale(rows, columns);
     };
 
 }
 
 function Paint_Canvas(canvas, rows, columns, grid, prob){
     let i = 0, j =0;
-    field_dim = Calculate_Dimensions(canvas, rows, columns);
     for (i=0; i < rows; i++){
         var row_child = document.createElement("span");
-        row_child.style.height = `${field_dim[0]}px`;
+        row_child.style.height = `${100/rows}%`;
         row_child.style.display = "flex";
         for (j=0; j<columns; j++){
-            Create_Field(row_child, field_dim, grid, prob);
+            Create_Field(row_child, rows, columns, grid, prob);
         };
         canvas.appendChild(row_child);
     }
