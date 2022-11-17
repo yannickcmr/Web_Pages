@@ -2,9 +2,11 @@
     --font-family: Verdana, Geneva, Tahoma, sans-serif;
     --font-size-big: 22px;
     --font-size-small: 15px;
-    --major-colour: rgb(255, 255, 197);
-    --minor-colour: rgb(254, 254, 166);
-    --accent-colout: hsl(321,12,4);
+    --major-colour: rgb(205, 205, 205);
+    --minor-colour: rgb(223, 240, 239);
+    --accent-colout: rgb(12, 11, 12);
+    --x-grad: 50%;
+    --y-grad: 13%;
 }
 body{
     display: flex;
@@ -17,6 +19,7 @@ body{
     align-items: center;
     font-family: var(--font-family);
     text-align: center;
+    background: conic-gradient(at var(--x-grad) var(--y-grad), var(--major-colour) 0deg 120deg, var(--minor-colour) 160deg 200deg, var(--major-colour) 250deg 360deg);
     background-color: var(--major-colour);
     width: 90%;
     height: 1000px;
